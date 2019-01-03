@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header'
+import BookItems from './BookItems'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state={
+      books : [
+        {
+          "title": "test",
+          "author": "aa",
+          "pages": 472,
+          "inCart": false,
+          "price": 5,
+          "id": 0
+      }
+    ],
+    cartItemsList : [
+    ]
+    }
+  }
+
+  addItem = (newItem) =>{
+    this.setState({
+      ...this.state,
+      cartItemsList: [...this.state.cartItemsList, newItem]
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <Header cartItemsList={this.state.cartItemsList}/>
+        <BookItems 
+          addItem={this.addItem}
+          books = {this.state.books}
+          cartItemsList={this.state.cartItemsList}
+          />
+      </>
     );
   }
 }

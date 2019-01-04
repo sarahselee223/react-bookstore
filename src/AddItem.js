@@ -38,7 +38,7 @@ class AddItem extends Component{
 
     render () {
         return (
-            <div className="col-md-2">
+            <div className="col-md-2 alignCenter">
                 <button type="button" className="btn btn-success btn-sm" onClick={this.addCartItem}>+</button>
             </div>
         )

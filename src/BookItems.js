@@ -27,7 +27,6 @@ class BookItems extends Component {
     }
 
     filteredBooks = () => {
-        console.log(this.props.searchItem)
         if(this.props.searchItem === '')
             return this.state.books
 
@@ -37,6 +36,7 @@ class BookItems extends Component {
                 book.title.toLowerCase().includes(this.props.searchItem)
             )
     }
+     
     renderBooks(){
         if(this.state.books){
         return this.filteredBooks().map(book => {
@@ -53,15 +53,15 @@ class BookItems extends Component {
     render(){
         return (
             <div className="container">
-            <h1>Our Books</h1>
+            <h1 className="title">Our Books</h1>
             <div className="list-group">
             <div className="list-group-item">
             <div className="row">
-                <div className="col-md-4">Title</div>
-                <div className="col-md-2">Author</div>
-                <div className="col-md-2">Pages</div>
-                <div className="col-md-2">Price</div>
-                <div className="col-md-2">Add to Cart</div>
+                <div className="col-md-4 head alignCenter">Title</div>
+                <div className="col-md-2 head alignCenter">Author</div>
+                <div className="col-md-2 head alignCenter">Pages</div>
+                <div className="col-md-2 head alignCenter">Price</div>
+                <div className="col-md-2 head alignCenter">Add to Cart</div>
             </div>
             </div>
                 { this.renderBooks() }

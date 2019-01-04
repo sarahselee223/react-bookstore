@@ -30,7 +30,7 @@ class CheckoutModal extends Component {
       return (
         <div>
 
-          <Button bsStyle="outline-success " onClick={this.handleShow}>
+          <Button className= "Checkout" bsStyle="outline-success " onClick={this.handleShow}>
             Checkout
           </Button>
   
@@ -38,7 +38,7 @@ class CheckoutModal extends Component {
             <div className="modal-dialog modal-lg" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">Checkout</h5>
+                    <h5 className="modal-title head" id="exampleModalLabel">Checkout</h5>
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -46,11 +46,11 @@ class CheckoutModal extends Component {
                 <div className="modal-body">
                   <div className="list-group-item">
                   <div className="row">
-                      <div className="col-md-1">#</div>
-                      <div className="col-md-5">Title</div>
-                      <div className="col-md-3">Author</div>
-                      <div className="col-md-2">Price</div>
-                      <div className="col-md-1">Quantity</div>
+                      <div className="col-md-1 head alignCenter">#</div>
+                      <div className="col-md-5 head alignCenter">Title</div>
+                      <div className="col-md-2 head alignCenter">Author</div>
+                      <div className="col-md-2 head alignCenter">Quantity</div>
+                      <div className="col-md-2 head alignCenter">Price</div>
                   </div> 
                   </div>
                   <CheckoutList key= {this.id} props= {this} />

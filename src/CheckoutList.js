@@ -15,17 +15,17 @@ function CheckoutList(props){
             <div className="row">
             {props.props.props.cartItemsList&&props.props.props.cartItemsList.map(book => {
                 return  (<>
-                        <div className="col-md-1">{book.id}</div>
-                        <div className="col-md-5">{book.book.title}</div>
-                        <div className="col-md-3">{book.book.author}</div>
-                        <div className="col-md-2">${book.book.price.toFixed(2)}</div>
-                        <div className="col-md-1">{book.quantity}</div>
+                        <div className="col-md-1 alignCenter">{book.id}</div>
+                        <div className="col-md-5 alignCenter">{book.book.title}</div>
+                        <div className="col-md-2 alignCenter">{book.book.author}</div>
+                        <div className="col-md-2 alignCenter">{book.quantity}</div>
+                        <div className="col-md-2 alignCenter">${book.book.price.toFixed(2)}</div>
                         </>
                 )})
             }  
             </div>
         </div>
-            <div className="total">Total Price: ${getTotal(props.props.props.cartItemsList).toFixed(2)}</div>
+            <div className="total head margin">Total Price: ${getTotal(props.props.props.cartItemsList).toFixed(2)}</div>
         </div>
         
     )

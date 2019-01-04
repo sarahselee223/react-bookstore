@@ -16,7 +16,7 @@ class Header extends Component {
 
     getSearchItem = (event) => {
         this.setState({
-            searchItem: event.target.value
+            searchItem: event.target.value.toLowerCase()
         })
     } 
 

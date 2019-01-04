@@ -25,16 +25,27 @@ class BookItems extends Component {
             console.log(err)
         }
     }
-    
+
+    filteredBooks = () => {
+        console.log(this.props.searchItem)
+        if(this.props.searchItem === '')
+            return this.state.books
+
+        return this.state.books.filter(
+            book => 
+                book.author.toLowerCase().includes(this.props.searchItem) ||
+                book.title.toLowerCase().includes(this.props.searchItem)
+            )
+    }
     renderBooks(){
         if(this.state.books){
-        return this.state.books.map(book => {
+        return this.filteredBooks().map(book => {
             return <BookItemComponent
-            addItem = {this.props.addItem}
-            books = {this.props.books}
-            cartItemsList={this.props.cartItemsList}
-            key={book.id}
-            {... book}/>
+                addItem = {this.props.addItem}
+                books = {this.props.books}
+                cartItemsList={this.props.cartItemsList}
+                key={book.id}
+                {... book}/>
         })
         }
     }
@@ -42,7 +53,7 @@ class BookItems extends Component {
     render(){
         return (
             <div className="container">
-            <h1>Books</h1>
+            <h1>Our Books</h1>
             <div className="list-group">
             <div className="list-group-item">
             <div className="row">

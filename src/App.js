@@ -8,18 +8,9 @@ class App extends Component {
     super(props)
 
     this.state={
-      books : [
-        {
-          "title": "test",
-          "author": "aa",
-          "pages": 472,
-          "inCart": false,
-          "price": 5,
-          "id": 0
-      }
-    ],
-    cartItemsList : [
-    ]
+      books : [],
+      cartItemsList : [],
+      searchItem: ''
     }
   }
 
@@ -30,13 +21,24 @@ class App extends Component {
     })
   }
 
+  handleSearchItem = (searchItem) => {
+    this.setState({
+      searchItem
+    })
+  }
+
+  
+
   render() {
     return (
       <>
-        <Header cartItemsList={this.state.cartItemsList}/>
+        <Header 
+        books = {this.state.books}
+        cartItemsList={this.state.cartItemsList}
+        handleSearchItem={this.handleSearchItem} />
         <BookItems 
           addItem={this.addItem}
-          books = {this.state.books}
+          searchItem = {this.state.searchItem}
           cartItemsList={this.state.cartItemsList}
           />
       </>

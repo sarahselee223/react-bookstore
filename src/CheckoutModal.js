@@ -53,7 +53,7 @@ class CheckoutModal extends Component {
                       <div className="col-md-1">Quantity</div>
                   </div> 
                   </div>
-                  <CheckoutList props= {this} />
+                  <CheckoutList key= {this.id} props= {this} />
                     
                 </div>
                 <div className="modal-footer">

@@ -10,14 +10,6 @@ class AddItem extends Component{
         }
     }
 
-    // addInputNumber = () => {
-    //     let currentNumber = Number(this.state.inputNumber) + 1
-    //     this.setState({
-    //         inputNumber: currentNumber
-    //     })
-    //     return currentNumber
-    // }
-
     addCartItem = () => {
 
         const cartItemsList = this.props.cartItemsList

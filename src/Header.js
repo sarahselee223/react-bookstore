@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import CheckoutModal from './CheckoutModal'
+import AdminModal from './AdminModal'
 
 class Header extends Component {
     constructor(props){
@@ -32,7 +33,7 @@ class Header extends Component {
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 <CheckoutModal cartItemsList={this.props.cartItemsList}/>
-    
+                <AdminModal {...this.props}/>
             </nav>
         )
     }

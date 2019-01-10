@@ -29,9 +29,9 @@ class CheckoutModal extends Component {
  
       return (
         <div>
-
-          <Button className= "Checkout" bsStyle="outline-success " onClick={this.handleShow}>
-            Checkout
+  
+          <Button className= "Checkout" bsStyle="success" onClick={this.handleShow}>
+            Checkout 
           </Button>
   
           <div ref={this.getModalReference} className="modal fade bd-example-modal-lg" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,12 +48,12 @@ class CheckoutModal extends Component {
                   <div className="row">
                       <div className="col-md-1 head alignCenter">#</div>
                       <div className="col-md-5 head alignCenter">Title</div>
-                      <div className="col-md-2 head alignCenter">Author</div>
-                      <div className="col-md-2 head alignCenter">Quantity</div>
+                      <div className="col-md-3 head alignCenter">Author</div>
+                      <div className="col-md-1 head alignCenter">Quantity</div>
                       <div className="col-md-2 head alignCenter">Price</div>
                   </div> 
                   </div>
-                  <CheckoutList key= {this.id} props= {this} />
+                  <CheckoutList {...this.props} />
                     
                 </div>
                 <div className="modal-footer">
@@ -66,7 +66,5 @@ class CheckoutModal extends Component {
       );
     }
   }
-  
-//   render(<Example />);
 
   export default CheckoutModal

@@ -1,12 +1,19 @@
-.Checkout {
+.Checkout, .Admin, .Create {
     margin-left: 8px;
 }
 .head {
     font-weight: bold;
 }
+.text-center {
+    text-align: center;
+}
 
 .margin {
     margin-top: 3%;
+}
+
+.submit {
+    margin: 3%;
 }
 
 .title {
@@ -16,4 +23,7 @@
 
 .alignCenter {
     text-align:center;
+}
+.main-list{
+    margin-bottom: 5%;
 }

@@ -66,6 +66,10 @@ class App extends Component {
         "pages":`${book.newPages}`
       }
       const response = await axios.put(`${process.env.REACT_APP_API_URL}/books/${book.updateBookId}`, updatedBook)
+      this.setState({
+        ...this.state,
+        books: this.state.books.filter(book => book.id !== response.data.id).concat([response.data])
+      })
       console.log(response.data)
     } catch(err){
       console.log(err)
